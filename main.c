@@ -1,4 +1,6 @@
 #include "brett.h"
+#include "macros.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,7 +15,6 @@ void setze_springer(struct t_brett* b);
 
 int main()
 {
-	printf("Anfang");
 	if(init_brett(&b, n, start_x, start_y) > 0) return EXIT_FAILURE;
 	setze_springer(&b);
 	loesche_brett(&b);
@@ -38,6 +39,9 @@ void setze_springer(struct t_brett* b)
 			if(frei(b, moves[i][0], moves[i][1]))
 			{
 				neuer_sprung(b, moves[i][0], moves[i][1]);
+#ifdef DEBUG
+				print(b);
+#endif 
 				setze_springer(b);
 				entferne_sprung(b, moves[i][0], moves[i][1]);
 			}

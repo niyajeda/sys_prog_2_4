@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS="-Wall"
 
-DEPS = brett.h
+DEPS = brett.h macros.h
 OBJ = main.o brett.o
 
 %.o: %.c $(DEPS)

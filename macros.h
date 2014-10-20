@@ -1,4 +1,3 @@
-
 /*
  * <one line to give the program's name and a brief idea of what it does.>
  * Copyright (C) 2014  Niklas Beck <s6nnbeck@uni-bonn.de>
@@ -20,30 +19,9 @@
  */
 
 /* inclusion guard */
-#ifndef __BRETT_H__
-#define __BRETT_H__
+#ifndef __MACROS_H__
+#define __MACROS_H__
 
-#include "macros.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-
-struct t_brett
-{
-	int dim;
-	int schritt_nr;
-	int pos_x;
-	int pos_y;
-	int** felder;
-};
-
-int init_brett(struct t_brett* brett, int n, int start_x, int start_y);
-int neuer_sprung(struct t_brett* brett, int x, int y);
-int frei(struct t_brett* brett, int x, int y);
-int entferne_sprung(struct t_brett* brett, int x, int y);
-int besuchte_felder(struct t_brett* brett);
-void print(struct t_brett* brett);
-void print_line(int n);
-void loesche_brett(struct t_brett* brett);
-
-#endif /* __BRETT_H__ */
+	//#define DEBUG
+	
+#endif /* __MACROS_H__ */
