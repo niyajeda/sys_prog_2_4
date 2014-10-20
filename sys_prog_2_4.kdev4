@@ -1,0 +1,4 @@
+[Project]
+Name=sys_prog_2_4
+Manager=KDevCustomMakeManager
+VersionControl=kdevgit
