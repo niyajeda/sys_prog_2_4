@@ -1,9 +1,16 @@
 CC=gcc
 CFLAGS="-Wall"
 
-debug:clean
-	$(CC) $(CFLAGS) -g -o sys_prog_2_4 main.c
-stable:clean
-	$(CC) $(CFLAGS) -o sys_prog_2_4 main.c
+DEPS = brett.h
+OBJ = main.o brett.o
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o  $@ $< $(CFLAGS) -g
+debug:$(OBJ)
+	$(CC) -o  $@ $^ $(CFLAGS) -g
+sys_prog_2_4: $(OBJ)
+	$(CC) -o  $@ $^ $(CFLAGS)
+stable: $(OBJ)
+	$(CC) -o  $@ $^ $(CFLAGS)
 clean:
-	rm -vfr *~ sys_prog_2_4
+	rm -vfr *~ debug
